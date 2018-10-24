@@ -24,18 +24,28 @@
 <style type="text/css">
 html {
     overflow: auto;
+
 }
+#menubar{
+    	position: fixed;
+    	z-index: 1;
+    	top: 0;
+    	left: 0;
+    	right: 0;
+    	background-image: url("<?php echo base_url();?>images/header.png"); 
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-position: center;
+    }
+ #content_area_wrapper{
+ 	margin-top:15%;
+ }
 </style>
 
 </head>
 <body>
 <div id="menubar">
 	<div id="menubar_container">
-		<div id="menubar_company_info">
-		<span id="company_title">POINT OF SALE</span><br />
-		
-	</div>
-
 		<div id="menubar_navigation">
 			<div class="menu_item">
 				<a href="<?php echo site_url('home');?>">
@@ -58,13 +68,12 @@ html {
 		</div>
 
 		<div id="menubar_footer">
+		<div class="alert alert-success"><?php echo date('F d, Y') ?><br/>
 		<?php echo $this->lang->line('common_welcome')." $user_info->first_name $user_info->last_name! | "; ?>
-		<?php echo anchor("home/logout",$this->lang->line("common_logout")); ?>
+		<a href="<?php echo site_url('home/logout')?>" style="color:black;"><?php echo $this->lang->line("common_logout");?></a>
 		</div>
-
-		<div id="menubar_date">
-		<?php echo date('F d, Y') ?>
 		</div>
+		
 
 	</div>
 </div>

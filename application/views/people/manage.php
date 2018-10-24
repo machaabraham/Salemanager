@@ -55,30 +55,43 @@ function post_person_form_submit(response)
 	}
 }
 </script>
-
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title"><?php echo $this->lang->line('common_list_of').' '.$this->lang->line('module_'.$controller_name); ?></h3>
+	</div>
+	<div class="panel-body">
+		
 <div id="title_bar">
-	<div id="title" class="float_left"><?php echo $this->lang->line('common_list_of').' '.$this->lang->line('module_'.$controller_name); ?></div>
 	<div id="new_button">
 		<?php echo anchor("$controller_name/view/-1/width:$form_width",
-		"<div class='big_button'><span>".$this->lang->line($controller_name.'_new')."</span></div>",
+		"<div class='btn btn-success btn-sm'><span>".$this->lang->line($controller_name.'_new')."</span></div>",
 		array('class'=>'thickbox none','title'=>$this->lang->line($controller_name.'_new')));
 		?>
 	</div>
 </div>
 <div id="table_action_header">
 	<ul>
-		<li class="float_left"><span><?php echo anchor("$controller_name/delete",$this->lang->line("common_delete"),array('id'=>'delete')); ?></span></li>
-		<li class="float_left"><span><a href="#" id="email"><?php echo $this->lang->line("common_email");?></a></span></li>
+		<li class="float_left"><span><?php echo anchor("$controller_name/delete",$this->lang->line("common_delete"),array('id'=>'delete','class'=>'btn btn-danger btn-sm')); ?></span></li>
+		<li class="float_left"><span><a href="javascript:void(0)" id="email" class="btn btn-warning btn-sm"><?php echo $this->lang->line("common_email");?></a></span></li>
 		<li class="float_right">
 		<img src='<?php echo base_url()?>images/spinner_small.gif' alt='spinner' id='spinner' />
 		<?php echo form_open("$controller_name/search",array('id'=>'search_form')); ?>
-		<input type="text" name ='search' id='search'/>
+            <div class="input-group">
+                <input type="text" class="form-control" name ='search' id='search' placeholder="Search">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            </div>
 		</form>
 		</li>
 	</ul>
 </div>
-<div id="table_holder">
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div id="table_holder">
 <?php echo $manage_table; ?>
 </div>
 <div id="feedback_bar"></div>
+	</div>
+</div>
+	</div>
+</div>
 <?php $this->load->view("partial/footer"); ?>

@@ -2,13 +2,13 @@
 $lang['module_home']='Home';
 
 $lang['module_customers']='Customers';
-$lang['module_customers_desc']='Add, Update, Delete, and Search customers';
+$lang['module_customers_desc']='Add,Update,Delete, and Search';
 
 $lang['module_suppliers']='Suppliers';
-$lang['module_suppliers_desc']='Add, Update, Delete, and Search suppliers';
+$lang['module_suppliers_desc']='Add, Update,Delete, and Search suppliers';
 
 $lang['module_employees']='Employees';
-$lang['module_employees_desc']='Add, Update, Delete, and Search employees';
+$lang['module_employees_desc']='Add,Update,Delete, and Search';
 
 $lang['module_sales']='Sales';
 $lang['module_sales_desc']='Process sales and returns';

@@ -1,5 +1,9 @@
 <?php $this->load->view("partial/header"); ?>
-<div id="page_title"><?php echo $this->lang->line('module_config'); ?></div>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+	</div>
+	<div class="panel-body">
+	<div id="page_title"><?php echo $this->lang->line('module_config'); ?></div>
 <?php
 echo form_open('config/save/',array('id'=>'config_form'));
 ?>
@@ -135,7 +139,7 @@ echo form_submit(array(
 	'name'=>'submit',
 	'id'=>'submit',
 	'value'=>$this->lang->line('common_submit'),
-	'class'=>'submit_button float_right')
+	'class'=>'btn btn-primary btn-block')
 );
 ?>
 </fieldset>
@@ -202,4 +206,6 @@ $(document).ready(function()
 	});
 });
 </script>
+	</div>
+</div>
 <?php $this->load->view("partial/footer"); ?>

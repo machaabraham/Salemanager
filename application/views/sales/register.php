@@ -1,13 +1,21 @@
 <?php $this->load->view("partial/header"); ?>
-<div id="page_title" style="margin-bottom:8px;"><?php echo $this->lang->line('sales_register'); ?></div>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h2 class="panel-title"><?php echo $this->lang->line('sales_register'); ?></h2>
+	</div>
+	<div class="panel-body">
 <?php
 if(isset($error))
 {
-	echo "<div class='error_message'>".$error."</div>";
+	echo "<div class='alert alert-danger'>".$error."</div>";
 }
 ?>
 <div id="register_wrapper">
-<?php echo form_open("sales/change_mode",array('id'=>'mode_form')); ?>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+	</div>
+	<div class="panel-body">
+		<?php echo form_open("sales/change_mode",array('id'=>'mode_form')); ?>
 	<div class="form-group">
 	<span><?php echo $this->lang->line('sales_mode') ?></span>
 	<?php echo form_dropdown('mode',$modes,$mode,'onchange="$(\'#mode_form\').submit();"'); ?>
@@ -103,9 +111,17 @@ else
 ?>
 </tbody>
 </table>
+	</div>
+</div>
 </div>
 <div id="overall_sale">
-	<?php
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			 <h5 style="text-align:center;"><i class="fa fa-cart-plus fa-10x" style="font-size:30px"></i></h5>
+
+		</div>
+		<div class="panel-body">
+		<?php
 	if(isset($customer))
 	{
 		echo $this->lang->line("sales_customer").': <b>'.$customer. '</b><br />';
@@ -172,8 +188,7 @@ else
         </tr> -->
         
         </table>
-        <br>
-		<?php echo "<button class='btn btn-success btn-sm' id='finish_sale_button' style='float:right;margin-top:5px;'><span>".$this->lang->line('sales_complete_sale')."</span></button>";
+        <?php echo "<button class='btn btn-success btn-sm' id='finish_sale_button' style='float:right;margin-top:5px;'><span>".$this->lang->line('sales_complete_sale')."</span></button>";
 		?>
 		</div>
 
@@ -181,7 +196,7 @@ else
 
 	    <?php echo form_open("sales/cancel_sale",array('id'=>'cancel_sale_form')); ?>
 			    <button class='btn btn-danger btn-sm' id='cancel_sale_button' style='float:left;margin-top:5px;'>
-					<span>Cancel Sale</span>
+					<span>Cancel</span>
 				</button>
         </form>
 	</div>
@@ -190,8 +205,10 @@ else
 	?>
 </div>
 <div class="clearfix" style="margin-bottom:30px;">&nbsp;</div>
-
-
+	</div>
+		</div>
+	</div>
+</div>
 <?php $this->load->view("partial/footer"); ?>
 
 <script type="text/javascript" language="javascript">

@@ -86,7 +86,11 @@ function post_bulk_form_submit(response)
 }
 </script>
 
-<div id="title_bar">
+<div class="panel panel-default">
+	<div class="panel-heading">
+	</div>
+	<div class="panel-body">
+	<div id="title_bar">
 	<div id="title" class="float_left"><?php echo $this->lang->line('common_list_of').' '.$this->lang->line('module_'.$controller_name); ?></div>
 	<div id="new_button">
 		<?php echo anchor("$controller_name/view/-1/width:$form_width",
@@ -100,12 +104,12 @@ function post_bulk_form_submit(response)
 	<table class="table table-bordered table-hover">
 		<thead>
 			<tr>
-				<th><span class="btn btn-danger"><?php echo anchor("$controller_name/delete",$this->lang->line("common_delete"),array('id'=>'delete')); ?></span></li></th>
-				<th><span class="btn btn-success"><?php echo anchor("$controller_name/bulk_edit/width:$form_width",$this->lang->line("items_bulk_edit"),array('id'=>'bulk_edit','title'=>$this->lang->line('items_edit_multiple_items'))); ?></span></th>
-				<th><span class="btn btn-warning"><?php echo anchor("$controller_name/generate_barcodes",$this->lang->line("items_generate_barcodes"),array('id'=>'generate_barcodes', 'target' =>'_blank','title'=>$this->lang->line('items_generate_barcodes'))); ?></span></th>
+				<th><span class="btn btn-danger btn-sm"><?php echo anchor("$controller_name/delete",$this->lang->line("common_delete"),array('id'=>'delete')); ?></span></li></th>
+				<th><span class="btn btn-success btn-sm"><?php echo anchor("$controller_name/bulk_edit/width:$form_width",$this->lang->line("items_bulk_edit"),array('id'=>'bulk_edit','title'=>$this->lang->line('items_edit_multiple_items'))); ?></span></th>
+				<th><span class="btn btn-warning btn-sm"><?php echo anchor("$controller_name/generate_barcodes",$this->lang->line("items_generate_barcodes"),array('id'=>'generate_barcodes', 'target' =>'_blank','title'=>$this->lang->line('items_generate_barcodes'))); ?></span></th>
 				<th><img src='<?php echo base_url()?>images/spinner_small.gif' alt='spinner' id='spinner' />
 		<?php echo form_open("$controller_name/search",array('id'=>'search_form')); ?>
-		<input type="text" class="form-control" name='search' id='search' placeholder="Search" />
+		<input type="text" class="form-control input-sm" name='search' id='search' placeholder="Search" />
 		</form></th>
 			</tr>
 		</thead>
@@ -113,7 +117,6 @@ function post_bulk_form_submit(response)
 </div>
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Items</h3>
 	</div>
 	<div class="panel-body">
 		<?php echo $manage_table; ?>
@@ -121,4 +124,6 @@ function post_bulk_form_submit(response)
 </div>
 
 <div id="feedback_bar"></div>
+	</div>
+</div>
 <?php $this->load->view("partial/footer"); ?>

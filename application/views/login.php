@@ -50,7 +50,7 @@ padding : 50px 0;
     <div class="container">
 	<div class="row">
 		<div class="col-md-4 login-sec">
-		    <h2 style="color:#00BFFF;" class="text-center">POINT OF SALE</h2>
+		    <h2 style="color:blue;" class="text-center">POINT OF SALE</h2>
 	
 <?php
 $attrib=array('class'=>'form');
@@ -85,7 +85,7 @@ $attrib=array('class'=>'form');
     <button type="submit" name="loginButton" class="btn btn-primary btn-block">Login</button>
 <?php echo form_close(); ?>
 
-<div class="copy-text">Developed By <i class="fa fa-heart"></i> agmacha@yahoo.com <a href="#">+255-689-843-428</a></div>
+<div class="copy-text" style="color: blue;">Developed By <i class="fa fa-heart"></i> agmacha@yahoo.com <a href="#">+255-689-843-428</a></div>
 		</div>
 		<div class="col-md-8 banner-sec">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -99,7 +99,7 @@ $attrib=array('class'=>'form');
       <img class="d-block img-fluid" src="<?php echo base_url();?>images/login1.jpg" alt="First slide">
       <div class="carousel-caption d-none d-md-block">
         <div class="banner-text">
-            <h2>This is Point Of Sale</h2>
+            <h2 style="color: blue;">This is Point Of Sale</h2>
             <p>Manage Your Business Without Geographical Location</p>
         </div>	
   </div>
